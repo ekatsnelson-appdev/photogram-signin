@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   get("/", { :controller => "users", :action => "index" })
 
   # User routes
@@ -11,17 +10,17 @@ Rails.application.routes.draw do
   post("/verify_credentials", { :controller => "users", :action => "authenticate" })
 
   # CREATE
-  get("/insert_user_record", {:controller => "users", :action => "create" })
+  get("/insert_user_record", { :controller => "users", :action => "create" })
 
   # READ
-  get("/users", {:controller => "users", :action => "index"})
-  get("/users/:the_username", {:controller => "users", :action => "show"})
+  get("/users", { :controller => "users", :action => "index" })
+  get("/users/:the_username", { :controller => "users", :action => "show" })
 
   # UPDATE
-  get("/update_user/:the_user_id", {:controller => "users", :action => "update" })
+  get("/update_user/:the_user_id", { :controller => "users", :action => "update" })
 
   # DELETE
-  get("/delete_user/:the_user_id", {:controller => "users", :action => "destroy"})
+  get("/delete_user/:the_user_id", { :controller => "users", :action => "destroy" })
 
   # Photo routes
 
@@ -29,15 +28,15 @@ Rails.application.routes.draw do
   get("/insert_photo_record", { :controller => "photos", :action => "create" })
 
   # READ
-  get("/photos", { :controller => "photos", :action => "index"})
+  get("/photos", { :controller => "photos", :action => "index" })
 
-  get("/photos/:the_photo_id", { :controller => "photos", :action => "show"})
+  get("/photos/:the_photo_id", { :controller => "photos", :action => "show" })
 
   # UPDATE
   get("/update_photo/:the_photo_id", { :controller => "photos", :action => "update" })
 
   # DELETE
-  get("/delete_photo/:the_photo_id", { :controller => "photos", :action => "destroy"})
+  get("/delete_photo/:the_photo_id", { :controller => "photos", :action => "destroy" })
 
   # Comment routes
 
@@ -46,6 +45,5 @@ Rails.application.routes.draw do
 
   # DELETE
 
-  get("/delete_comment/:the_comment_id", { :controller => "comments", :action => "destroy"})
-
+  get("/delete_comment/:the_comment_id", { :controller => "comments", :action => "destroy" })
 end
