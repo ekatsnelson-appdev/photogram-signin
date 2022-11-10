@@ -17,7 +17,7 @@ class UsersController < ApplicationController
         session.store(:user_id, user.id)
         redirect_to("/", { :notice => "Welcome back, " + user.username + "!" })
       else
-        redirect_to("/user_sign_in", { :alert => "Nice try, sucker!" )
+        redirect_to("/user_sign_in", { :alert => "Nice try, sucker!" })
       end
     end
   end
