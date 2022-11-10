@@ -1,8 +1,14 @@
 class UsersController < ApplicationController
+  def new_registration_form
+    #@users = User.all.order({ :username => :asc })
+
+    render({ :template => "users/signup_form.html.erb" })
+  end
+
   def index
     @users = User.all.order({ :username => :asc })
 
-    render({ :template => "users/index.html" })
+    render({ :template => "users/index.html.erb" })
   end
 
   def show
@@ -26,11 +32,10 @@ class UsersController < ApplicationController
     the_id = params.fetch("the_user_id")
     user = User.where({ :id => the_id }).at(0)
 
-
     user.username = params.fetch("input_username")
 
     user.save
-    
+
     redirect_to("/users/#{user.username}")
   end
 
@@ -42,5 +47,4 @@ class UsersController < ApplicationController
 
     redirect_to("/users")
   end
-
 end
