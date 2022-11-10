@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       redirect_to("/user_sign_in", { :alert => "No one by that name here" })
     else
       # if there is a record, check to see if password matches
-      if user.athenticate(pw)
+      if user.authenticate(pw)
         session.store(:user_id, user.id)
         redirect_to("/", { :notice => "Welcome back, " + user.username + "!" })
       else
